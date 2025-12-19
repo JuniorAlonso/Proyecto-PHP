@@ -25,7 +25,5 @@ $resultado = mysqli_real_connect(
 
 if (!$resultado) {
     die("Error de conexión: " . mysqli_connect_error());
-} else {
-    echo "¡Conexión exitosa a Azure MySQL!";
 }
 ?>
