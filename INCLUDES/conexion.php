@@ -1,21 +1,24 @@
 <?php
 $servidor = "colegio.mysql.database.azure.com"; 
-$usuario = "junior@colegio"; 
-$contrasena = "junior1234."; // Pon aquí la clave que creaste
+$usuario = "junior"; 
+$contrasena = "junior1234."; // tu contraseña real
 $db = "colegio";
+$puerto = 3306;
 
 // Inicializar MySQLi
 $conexion = mysqli_init();
 
-// Azure requiere conexiones cifradas por defecto. 
-// Si da error de certificado, asegúrate de haber configurado el Firewall en Azure.
+// Configurar SSL obligatorio
+mysqli_ssl_set($conexion, NULL, NULL, NULL, NULL, NULL);
+
+// Conectar
 $resultado = mysqli_real_connect(
     $conexion, 
     $servidor, 
     $usuario, 
     $contrasena, 
     $db, 
-    3306, 
+    $puerto, 
     NULL, 
     MYSQLI_CLIENT_SSL
 );
