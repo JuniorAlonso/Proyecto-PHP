@@ -1,7 +1,7 @@
 <?php
 $servidor = "colegio.mysql.database.azure.com"; 
 $usuario = "junior"; 
-$contrasena = "junior1234."; // tu contraseña real
+$contrasena = "junior1234."; 
 $db = "colegio";
 $puerto = 3306;
 

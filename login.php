@@ -5,7 +5,6 @@ include("INCLUDES/conexion.php");
 $input = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 
-// Consulta: buscar por usuario o correo y solo activos
 $sql = "SELECT * FROM usuarios 
         WHERE (usuario = '$input' OR correo = '$input')
         AND estado = 'activo'
@@ -17,7 +16,6 @@ if ($resultado && mysqli_num_rows($resultado) === 1) {
 
     $usuario = mysqli_fetch_assoc($resultado);
 
-    // ✅ Verificar contraseña usando la columna 'password'
     if (password_verify($contrasena, $usuario['password'])) {
 
         // Guardar datos en sesión
@@ -37,7 +35,7 @@ if ($resultado && mysqli_num_rows($resultado) === 1) {
     }
 }
 
-// ❌ Error de login
+// Error de login
 header("Location: index.php?error=1");
 exit;
 ?>
