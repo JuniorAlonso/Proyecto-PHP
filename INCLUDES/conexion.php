@@ -5,13 +5,10 @@ $contrasena = "junior1234."; // tu contraseña real
 $db = "colegio";
 $puerto = 3306;
 
-// Inicializar MySQLi
 $conexion = mysqli_init();
 
-// Configurar SSL obligatorio
 mysqli_ssl_set($conexion, NULL, NULL, NULL, NULL, NULL);
 
-// Conectar
 $resultado = mysqli_real_connect(
     $conexion, 
     $servidor, 

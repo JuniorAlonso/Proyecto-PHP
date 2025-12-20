@@ -32,7 +32,7 @@ $resultado = mysqli_query($conexion, $sql);
     <header>
         <div class="left">
             <div class="brand">
-                <h1>USUARIOS / COLEGIO <span class="titulo">HIJOS DE DIOS</span></h1>
+                <h1>COLEGIO <span class="titulo">HIJOS DE DIOS</span></h1>
             </div>
         </div>
 

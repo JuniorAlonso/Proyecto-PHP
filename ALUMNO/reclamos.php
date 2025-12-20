@@ -109,7 +109,7 @@ if ($stmt) {
         <h2>Enviar un reclamo</h2>
         <form method="POST" class="mb-4">
             <div class="mb-3">
-                <textarea name="descripcion" class="form-control" rows="3" placeholder="Escribe tu reclamo aquí..." required></textarea>
+                <textarea name="descripcion" class="form-control descripcion-ancha" rows="3" placeholder="Escribe tu reclamo aquí..." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
@@ -149,5 +149,10 @@ if ($stmt) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../JS/menu.js"></script>
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2025 Colegio Hijos de Dios</p>
+        </div>
+    </footer>
 </body>
 </html>

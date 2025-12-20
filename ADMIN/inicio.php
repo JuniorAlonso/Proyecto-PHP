@@ -40,7 +40,7 @@ $encuestasActivas = mysqli_fetch_row(
     <header>
         <div class="left">
             <div class="brand">
-                <h1>PANEL ADMINISTRADOR / COLEGIO <span class="titulo">HIJOS DE DIOS</span></h1>
+                <h1>COLEGIO <span class="titulo">HIJOS DE DIOS</span></h1>
             </div>
         </div>
 

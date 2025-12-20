@@ -28,7 +28,7 @@ $resultado = mysqli_query($conexion, $sql) or die("Error en la consulta: " . mys
     <header>
         <div class="left">
             <div class="brand">
-                <h1>ALUMNOS / COLEGIO <span class="titulo">HIJOS DE DIOS</span></h1>
+                <h1>COLEGIO <span class="titulo">HIJOS DE DIOS</span></h1>
             </div>
         </div>
     </header>

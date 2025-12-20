@@ -119,7 +119,8 @@ $resultado = mysqli_query($conexion, "SELECT * FROM encuestas ORDER BY creado_en
     <div class="container mt-4">
         <h2>Agregar Nueva Encuesta</h2>
         <form method="POST" class="mb-4">
-            <textarea name="titulo" class="form-control titulo-ancha" rows="3" placeholder="Título de la encuesta" required></textarea>
+            <textarea name="titulo" class="form-control titulo-ancha" rows="3" placeholder="Título de la encuesta"
+                required></textarea>
 
             <button type="submit" class="btn btn-primary mt-2">Agregar Encuesta</button>
         </form>
@@ -151,10 +152,15 @@ $resultado = mysqli_query($conexion, "SELECT * FROM encuestas ORDER BY creado_en
                         </td>
                         <td><?= $r['creado_en'] ?></td>
                         <td>
-                            <a href="encuestas.php?toggle=<?= $r['id'] ?>" class="btn btn-sm btn-warning">
+                            <a href="encuestas.php?toggle=<?= $r['id'] ?>" class="btn btn-sm btn-warning mb-1">
                                 Cambiar Estado
                             </a>
+
+                            <a href="ver_respuestas.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-info">
+                                Ver Respuestas
+                            </a>
                         </td>
+
                     </tr>
                 <?php endwhile; ?>
             </tbody>
@@ -162,6 +168,12 @@ $resultado = mysqli_query($conexion, "SELECT * FROM encuestas ORDER BY creado_en
     </div>
 
     <script src="../JS/menu.js"></script>
+
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2025 Colegio Hijos de Dios</p>
+        </div>
+    </footer>
 </body>
 
 </html>

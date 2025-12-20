@@ -378,3 +378,28 @@ footer {
     width: 800px;    
     max-width: 800px; 
 }
+
+.descripcion-ancha {
+    width: 800px;    
+    max-width: 800px; 
+}
+
+.textarea-respuesta {
+    width: 800px;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.asistencia-container {
+    max-width: 1000px;   /* puedes cambiar a 900, 1100, etc */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabla-asistencia {
+    width: 800px;
+    font-size: 16px;           /* texto más grande */
+}
+
+
+
