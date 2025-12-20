@@ -21,6 +21,7 @@ if ($resultado && mysqli_num_rows($resultado) === 1) {
     if (password_verify($contrasena, $usuario['password'])) {
 
         // Guardar datos en sesión
+        $_SESSION['id'] = $usuario['id'];  
         $_SESSION['usuario'] = $usuario['usuario'];
         $_SESSION['rol'] = $usuario['rol'];
 

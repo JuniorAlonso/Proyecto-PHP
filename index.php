@@ -32,7 +32,7 @@ $error = isset($_GET['error']) ? 1 : 0;
                 <?php endif; ?>
 
                 
-                <label for="Usuario">Usuario</label>
+                <label for="Usuario">Usuario o Correo</label>
                 <input id="Usuario" name="usuario" type="text" required autofocus>
 
                 <label for="Contrasena">Contraseña</label>

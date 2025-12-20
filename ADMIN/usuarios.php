@@ -24,10 +24,75 @@ $resultado = mysqli_query($conexion, $sql);
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
+    <link rel="stylesheet" href="../CSS/main.css">
 </head>
 
-<body class="bg-light">
+<body>
+    <!-- Header -->
+    <header>
+        <div class="left">
+            <div class="brand">
+                <h1>USUARIOS / COLEGIO <span class="titulo">HIJOS DE DIOS</span></h1>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="sidebar-section">
+        <div class="sidebar" id="sidebar">
+            <!-- Menu hamburguesa -->
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="inicio.php">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="usuarios.php" class="active">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>Usuarios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="alumnos.php">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Alumnos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reclamos_admin.php">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            <span>Reclamos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="encuestas.php">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <span>Encuestas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../salir.php">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Cerrar sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </section>
+
     <div class="container mt-4">
         <h2 class="mb-4">
             <i class="fa-solid fa-users"></i> Gestión de Usuarios
@@ -57,8 +122,17 @@ $resultado = mysqli_query($conexion, $sql);
                             <tr>
                                 <td><?= $u['id'] ?></td>
                                 <td><?= $u['usuario'] ?></td>
+                                <?php
+                                $color = '';
+                                if ($u['rol'] == 'admin')
+                                    $color = 'bg-danger';      // Rojo
+                                elseif ($u['rol'] == 'docente')
+                                    $color = 'bg-warning'; // Amarillo
+                                elseif ($u['rol'] == 'alumno')
+                                    $color = 'bg-info';  // Celeste agua
+                                ?>
                                 <td>
-                                    <span class="badge bg-info"><?= $u['rol'] ?></span>
+                                    <span class="badge <?= $color ?>"><?= $u['rol'] ?></span>
                                 </td>
                                 <td>
                                     <?php if ($u['estado'] == 'activo') { ?>
@@ -99,8 +173,21 @@ $resultado = mysqli_query($conexion, $sql);
                     </div>
 
                     <div class="mb-3">
+                        <label>Correo</label>
+                        <input type="text" name="correo" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
                         <label>Contraseña</label>
                         <input type="password" name="password" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Estado</label>
+                        <select name="estado" class="form-select">
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
                     </div>
 
                     <div class="mb-3">
@@ -121,6 +208,13 @@ $resultado = mysqli_query($conexion, $sql);
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/menu.js"></script>
+
+    <footer>
+        <div class="contenedor">
+            <p>&copy; 2025 Colegio Hijos de Dios</p>
+        </div>
+    </footer>
 </body>
 
 </html>

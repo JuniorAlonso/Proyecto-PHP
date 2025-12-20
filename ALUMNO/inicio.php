@@ -12,7 +12,7 @@ include("../includes/sesion.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/main.css">
 
 </head>
 
@@ -48,27 +48,21 @@ include("../includes/sesion.php");
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="active" title="Inicio">
-                            <i class="fa-solid fa-house"></i>
+                        <a href="asistencia.php" title="Lista">
+                            <i class="fa-solid fa-list-check"></i>
                             <span>Asistencia</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" title="Biblioteca">
-                            <i class="fa-solid fa-book"></i>
-                            <span>Reservas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="Préstamos">
+                        <a href="reclamos.php">
                             <i class="fa-solid fa-hand-holding-heart"></i>
                             <span>Reclamos</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" title="Buscar">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <span>Encuesta</span>
+                        <a href="encuestas.php">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <span>Encuestas</span>
                         </a>
                     </li>
                     <li>
@@ -84,7 +78,7 @@ include("../includes/sesion.php");
     <section class="main-content">
         <div class="container">
             <section class="contenido">
-                <h2>Bienvenido(a), Estudiante</h2>
+                <h2>Bienvenido, <strong><?php echo $_SESSION['usuario']; ?></strong></h2>
                 <p>Desde este portal podrás revisar tu asistencia, realizar reservas, enviar reclamos o sugerencias y
                     participar en encuestas.<br>Revisa el menú lateral para acceder a cada opción.</br>
             </section>

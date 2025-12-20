@@ -28,9 +28,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
-    /*color: var(--text-color);
-    background-color: var(--background-color);
-    scroll-behavior: smooth;*/
+   
 }
 
 /* Body */
@@ -44,7 +42,7 @@ body {
 header {
     height: 72px;
     background-color: #F6F6F6;
-    margin-left: 89px;            /* deja espacio al sidebar */
+    margin-left: 89px;      
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -94,36 +92,63 @@ header {
 }
 .sidebar-section {
     position: fixed;
-    top: 0px; /* debajo del header */
+    top: 0px; 
     left: 0;
     height: calc(100vh - 72px);
 }
 
 .sidebar.menu-toggle {
-    width: 18rem;
+    width: 15rem;
+}
+
+.sidebar.menu-toggle a span {
+    display: inline; 
 }
 
 .sidebar .menu-container {
-    height: 72px;                 /* MISMA altura del header */
+    height: 72px;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
+    position: relative;
+    z-index: 101;
+}
+
+.sidebar.menu-toggle .menu-container {
+    justify-content: flex-start; 
+    padding-left: 32px; 
+}
+
+.sidebar nav ul {
+    list-style: none;       
+    padding: 0;             
+    margin: 0;              
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .sidebar a {
     color: #ffffff;
+    height: 78px;
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 12px 20px;
+    padding: 32px;
     gap: 10px;
 
     white-space: nowrap;
     overflow: hidden;
 }
 
+.sidebar a span {
+    font-size: 18px;
+    display: none; 
+}
+
 .sidebar a:hover, .sidebar a.active {
     background-color: rgba(255,255,255,0.15);
+    width: 15rem;
 }
 
 .sidebar a i {
@@ -164,7 +189,7 @@ header {
     font-size: 1.5rem;
 }
 .right span {
-    font-size: 16px;       /* tamaño de letra */
+    font-size: 16px;      
     font-weight: 600;
 }
 
@@ -219,10 +244,10 @@ header {
 /* 2. El contenedor de las tarjetas (EL PASO CLAVE) */
 .cards {
     display: flex;
-    flex-direction: row;    /* Alineación horizontal */
-    justify-content: center; /* Centra las tarjetas */
-    gap: 20px;              /* Espacio entre tarjetas */
-    flex-wrap: wrap;        /* Si la pantalla es muy chica, se bajan automáticamente */
+    flex-direction: row;  
+    justify-content: center; 
+    gap: 20px;              
+    flex-wrap: wrap;       
     margin-top: 50px;
     width: 100%;
 }
@@ -230,7 +255,7 @@ header {
 /* 3. Estilo de las tarjetas individuales */
 .card-container {
     background-color: #ffffff;
-    width: 280px;           /* Ancho fijo para cada una */
+    width: 280px;          
     padding: 30px 20px;
     border-radius: 12px;
     text-align: center;
@@ -244,14 +269,14 @@ header {
 .card-container:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-    border-color: #16a34a; /* Resalta con el verde que usas */
+    border-color: #16a34a; 
 }
 
 /* Iconos de las tarjetas */
 .card-container i.fa-solid, 
 .card-container i {
     font-size: 45px !important;
-    color: #16a34a !important; /* El verde que quieres */
+    color: #16a34a !important; 
     margin-bottom: 15px;
     display: block;
 }
@@ -341,4 +366,15 @@ footer {
     padding: 10px;
     font-size: 14px;
     color: #333;
+}
+
+.modal {
+    position: fixed !important;
+    overflow: visible !important;
+    z-index: 1055 !important; 
+}
+
+.titulo-ancha {
+    width: 800px;    
+    max-width: 800px; 
 }

@@ -79,7 +79,7 @@ $encuestasActivas = mysqli_fetch_row(
                         </a>
                     </li>
                     <li>
-                        <a href="reclamos.php">
+                        <a href="reclamos_admin.php">
                             <i class="fa-solid fa-hand-holding-heart"></i>
                             <span>Reclamos</span>
                         </a>
