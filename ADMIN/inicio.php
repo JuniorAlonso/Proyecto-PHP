@@ -9,7 +9,7 @@ if ($_SESSION['rol'] != 'admin') {
 
 // Consultas
 $totalAlumnos = mysqli_fetch_row(
-    mysqli_query($conexion, "SELECT COUNT(*) FROM alumnos")
+    mysqli_query($conexion, "SELECT COUNT(*) FROM usuarios WHERE rol = 'alumno'")
 )[0];
 
 $reclamosPendientes = mysqli_fetch_row(

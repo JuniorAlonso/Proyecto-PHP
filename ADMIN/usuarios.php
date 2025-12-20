@@ -118,37 +118,36 @@ $resultado = mysqli_query($conexion, $sql);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($u = mysqli_fetch_assoc($resultado)) { ?>
+                        <?php
+                        $i = 1; // Inicializamos el contador
+                        while ($u = mysqli_fetch_assoc($resultado)) {
+                            ?>
                             <tr>
-                                <td><?= $u['id'] ?></td>
+                                <td><?= $i++ ?></td>
                                 <td><?= $u['usuario'] ?></td>
-                                <?php
-                                $color = '';
-                                if ($u['rol'] == 'admin')
-                                    $color = 'bg-danger';      // Rojo
-                                elseif ($u['rol'] == 'docente')
-                                    $color = 'bg-warning'; // Amarillo
-                                elseif ($u['rol'] == 'alumno')
-                                    $color = 'bg-info';  // Celeste agua
-                                ?>
                                 <td>
+                                    <?php
+                                    $color = '';
+                                    if ($u['rol'] == 'admin')
+                                        $color = 'bg-danger';
+                                    elseif ($u['rol'] == 'docente')
+                                        $color = 'bg-warning';
+                                    elseif ($u['rol'] == 'alumno')
+                                        $color = 'bg-info';
+                                    ?>
                                     <span class="badge <?= $color ?>"><?= $u['rol'] ?></span>
                                 </td>
                                 <td>
-                                    <?php if ($u['estado'] == 'activo') { ?>
-                                        <span class="badge bg-success">Activo</span>
-                                    <?php } else { ?>
-                                        <span class="badge bg-secondary">Inactivo</span>
-                                    <?php } ?>
+                                    <span class="badge <?= ($u['estado'] == 'activo') ? 'bg-success' : 'bg-secondary' ?>">
+                                        <?= ucfirst($u['estado']) ?>
+                                    </span>
                                 </td>
                                 <td><?= $u['creado_en'] ?></td>
                                 <td>
-                                    <button class="btn btn-sm btn-warning">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger">
+                                    <a href="eliminar_usuario.php?id=<?= $u['id'] ?>" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
                                         <i class="fa-solid fa-trash"></i>
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                         <?php } ?>
